@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async_await</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <script>
+        const asf = async ()=>{
+            try{
+                let arr = await $.ajax({url:'data/arr1.txt',dataType:'json'});
+                let json = await $.ajax({url:'data/json.txt',dataType:'json'});
+                console.log(arr,json);
+            }catch(e){
+                console.log(e);
+
+                console.log(e.status);
+
+                document.write(e.responseText);
+                document.close();
+            }
+        } 
+        asf();
+    </script>
+</body>
+</html>

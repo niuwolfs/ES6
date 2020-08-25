@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象</title>
+</head>
+<body>
+    <script>
+        //面向对象 老版本的写法
+        // function User(username,password){
+        //     this.username = username;
+        //     this.password = password;
+        // }
+        // User.prototype.showName = function(){
+        //     alert(this.username);
+        // }
+        // User.prototype.showPass = function(){
+        //     alert(this.password);
+        // }
+        //继承 老版本的写法
+        // function VipUser(username,password,level){
+        //     User.call(this,username,password);
+        //     this.level = level;
+        // }
+        // VipUser.prototype=new User();
+        // VipUser.prototype.constructor=VipUser;
+        // VipUser.prototype.showLevel = function(){
+        //     alert(this.level);
+        // }
+
+        // 面向对象ES6的写法
+        class User{
+            constructor(username,password){
+                this.username = username;
+                this.password = password;
+            }
+            showName(){
+                alert(this.username);
+            }
+            showPass(){
+                alert(this.password);
+            }
+        }
+        class VipUser extends User{
+            constructor(username,password,level){
+                super(username,password);
+                this.level = level;
+            }
+            showLevel(){
+                alert(this.level);
+            }
+        }
+        // 继承ES6的写法
+        var u1 = new User('abc','123');
+        u1.showName();
+        u1.showPass();
+        var v1 = new VipUser('efg','456',3);
+        v1.showName();
+        v1.showPass();
+        v1.showLevel();
+    </script>
+</body>
+</html>

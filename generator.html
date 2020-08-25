@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>generator</title>
+</head>
+<body>
+    <script>
+        function * show(){
+            alert("a");
+            let a = yield 9;
+            alert("b");
+            alert(a);
+            return 19;
+        }
+        let ger = show();
+        let res1 = ger.next();
+        console.log(res1);
+        let res2 =ger.next(1);
+        console.log(res2);
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数扩展展开</title>
+</head>
+<body>
+    <script>
+        //收集剩余参数
+        // function show(a,b,...args){
+        //     alert(a);
+        //     alert(b);
+        //     alert(args);
+        // }
+        // show(1,2,3,4,5);
+        
+        //参数展开
+        // let args1 = [1,2,3];
+        // let args2 = [4,5,6];
+        // let args = [...args1,...args2];
+        // alert(args);
+
+        // function show(a,b,c){
+        //     alert(a);
+        //     alert(b);
+        //     alert(c);
+        // }
+        // show(...args1);
+
+        //参数默认值
+        function show(a,b=5,c=6){
+            alert(a);
+            alert(b);
+            alert(c);
+        }
+        show(1,undefined,3);
+        show(1,null,3);
+        show(1);
+
+    </script>
+</body>
+</html>

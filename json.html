@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        let str = '{"a":1,"b":2,"c":3}';
+        // console.log(JSON.parse(str));
+        // console.log(JSON.stringify(JSON.parse(str)));
+
+        // JSON的简写:名称和函数
+        let a = 1;
+        let b = 2;
+        let json1 = {a:a,b:b,c:5,show:function(){alert('json1 '+a)}};
+        let json2 = {a,b,c:5,show(){alert('json2 '+a)}};
+        console.log(json1);
+        console.log(json2);
+        json1.show();
+        json2.show();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+</head>
+<body>
+    <script>
+        //map功能
+        let arr = [60,50,70,30,99];
+        let result1 = arr.map(item=>item>=60?'及格':'不及格');
+        // alert(result1);
+
+        //reduce功能
+        let result2 = arr.reduce((tmp,item,index)=>{
+            // alert('tmp :' + tmp);
+            // alert('item :' + item);
+            // alert('index :' + index);
+            return tmp + item;
+        });
+        // alert(result2);
+
+        //filter功能
+        let result3 = arr.filter(item=>item%3==0);
+        // alert(result3);
+
+        //forEach功能
+        // arr.forEach(item=>{
+        //     alert(item);
+        // });
+        arr.forEach((item,index)=>{
+            alert(index + '_' + item);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <script>
+        // let p = new Promise(function(resolve,reject){
+        //     $.ajax({
+        //         url:'data/arr.txt',
+        //         dataType:'json',
+        //         success(arr){
+        //             resolve(arr);
+        //         },
+        //         error(err){
+        //             reject(err);
+        //         }
+        //     })
+        // });
+        // p.then(function(arr){
+        //     alert("成功了，获取的数据为： " + arr);
+        // },function(err){
+        //     console.log(err);
+        //     alert(err.status);
+        //     alert("失败了");
+        // });
+
+
+        // let p1 = new Promise(function(resolve,reject){
+        //     $.ajax({
+        //         url:'data/arr.txt',
+        //         dataType:'json',
+        //         success(arr){
+        //             resolve(arr);
+        //         },
+        //         error(err){
+        //             reject(err);
+        //         }
+        //     });
+        // });
+        // let p2 = new Promise(function(resolve,reject){
+        //     $.ajax({
+        //         url:'data/json.txt',
+        //         dataType:'json',
+        //         success(arr){
+        //             resolve(arr);
+        //         },
+        //         error(err){
+        //             reject(err);
+        //         }
+        //     });
+        // });
+        // Promise.all([
+        //     p1,p2
+        // ]).then(function(arr){
+        //     let [res1,res2] = arr;
+        //     console.log(res1);
+        //     console.log(res2);
+        //     alert('成功了');
+        // },function(err){
+        //     alert('至少一个失败了');
+        // });
+
+
+        // function createPromise(url){
+        //     return new Promise(function(resolve,reject){
+        //         $.ajax({
+        //             url,
+        //             dataType:'json',
+        //             success(arr){
+        //                 resolve(arr);
+        //             },
+        //             error(err){
+        //                 reject(err);
+        //             }
+        //         })
+        //     });
+        // }
+        // Promise.all([
+        //     createPromise('data/arr.txt'),
+        //     createPromise('data/json.txt')
+        // ]).then(function(arr){
+        //     let [res1,res2] = arr;
+        //     console.log(res1);
+        //     console.log(res2);
+        //     alert('成功了');
+        // },function(err){
+        //     alert('至少一个失败了');
+        // });
+
+        Promise.all([
+            $.ajax({url:'data/arr.txt',dataType:'json'}),
+            $.ajax({url:'data/json.txt',dataType:'json'})
+        ]).then(results=>{
+            let [arr,json] = results;
+            console.log(arr,json);
+            alert('成功了');
+        },err=>{
+            alert('失败了');
+        });
+        
+    </script>
+    
+</body>
+</html>
